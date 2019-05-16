@@ -78,7 +78,10 @@ export class Image extends Shape<ImageConfig> {
     }
 
     if (image) {
-      context.drawImage.apply(context, params);
+      try {
+        context.drawImage.apply(context, params); 
+      } catch (error) {
+      }
     }
   }
   _hitFunc(context) {
